@@ -41,7 +41,7 @@
 					while($result = $show_product->fetch_assoc()){
 			?>
 				<div class="grid_1_of_4 images_1_of_4 ">
-					<a   href="details.php?proid=<?php echo $result['productId'] ;?>"><img class="image_product" style="height:200px" src="admin/uploads/<?php echo $result['image_product'];?>" alt="" /></a>
+					<a   href="details.php?proid=<?php echo $result['productId'] ;?>"><img class="image_product" style="height:200px;" src="admin/uploads/<?php echo $result['image_product'];?>" alt="" /></a>
 					<h2><?php echo $result['productName'] ;?> </h2>
 					<p><?php echo $fm->textShorten($result['description_product'],40);?></p>
 					<p><span class="price"><?php echo $result['price'] . " " ."VNĐ" ?></span></p>

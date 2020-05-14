@@ -8,8 +8,8 @@
         border: 1px solid;
         float: left;
         padding: 3px;
-        margin-top: 30px;
-        margin-left: 0px;
+        margin-top: 12px;
+    
     }
     .box_right{
         width: 37%;
@@ -17,6 +17,7 @@
         float: right;
         padding: 3px;
         margin-top: 12px;
+        margin-bottom: 20px;
     }
     .ordersubmit{
         padding: 5px;
@@ -25,12 +26,15 @@
         color: fff;
         border: none;
         width: 100px;
-        margin-left: 79%;
+        margin-left: 73%;
         border-radius: 10%;
         cursor: pointer ;
     }
     .ordersubmit:hover{
         background : black;
+    }
+    .content_top{
+        display: contents;
     }
    
 </style>
@@ -53,7 +57,10 @@
                     <div class="content_top">
                         <div class="heading">
                         <h3>Payment Offline</h3>
+                            </div>
                     </div>
+                </div>
+            </div>
                         <div class="clear"></div>      
                         <div class="box_left">
                                 <table class="tblone">

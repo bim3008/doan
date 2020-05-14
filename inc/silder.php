@@ -9,10 +9,7 @@
 					if($getIphone)
 					{
 						while($resultIp = $getIphone->fetch_assoc())
-						{
-
-						
-			
+						{		
 			?>
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">

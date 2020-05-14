@@ -1,4 +1,3 @@
-
 <?php
 		require_once 'inc/header.php';
 		require_once 'inc/silder.php';
@@ -23,7 +22,7 @@
 						while($result = $productFreatured->fetch_assoc())
 						{
 			  ?>
-				<div class="grid_1_of_4 images_1_of_4">
+				<div class="grid_1_of_4 images_1_of_4 ">
 					 <a href="details.php?proid=<?php echo $result['productId']?>"><img style="height: 200px" src="admin/uploads/<?php echo $result['image_product'] ;?>" alt="" /></a>
 					 <h2><?php echo  $result['productName'] ;?> </h2>
 					 <p> <?php echo $fm->textShorten($result['description_product'],30) ;?>  </p>

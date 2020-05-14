@@ -2,6 +2,13 @@
 		require_once 'inc/header.php';
 	//	require_once 'inc/silder.php';
 ?>  
+<?php
+        $check_cart = Session::get('sum') ;
+        if($check_cart == "" || $check_cart == NULL)
+        {
+                header('location:cart.php') ;
+        }
+?>  
     <style>
         .payment {
             text-align: center;
