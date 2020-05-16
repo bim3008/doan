@@ -205,6 +205,62 @@
             $result = $this->db->select($query); 
             return $result ;
         }
+        // Thêm vào so sánh
+
+        public function insert_compare($productid,$customer_id)
+        {
+            $productid = mysqli_real_escape_string($this->db->link,$productid);
+            $customer_id    = mysqli_real_escape_string($this->db->link,$customer_id);
+
+            $check_compare    = "SELECT * FROM tbl_compare WHERE productId = '$productid' AND customer_id = '$customer_id' "  ;
+            $result_check_compare = $this->db->select($check_compare);
+            if($result_check_compare)  
+            {   
+                $msg = '<span style="color:red">Sản phẩm đã được thêm</span>';
+                return $msg;
+            }
+            else
+            {
+                $query    = "SELECT * FROM tbl_product WHERE productId = '$productid'";
+                $result   = $this->db->select($query)->fetch_assoc() ;
+                $productId   = $result['productId'] ;  
+                $productName = $result['productName'] ;
+                $image       = $result['image_product'] ;
+                $price       = $result['price'] ;
+
+                $query_compare  = "INSERT INTO tbl_compare(customer_id,productId,productName,productImage,price)
+                                VALUES('$customer_id','$productId','$productName','$image','$price') ";
+                $result_compare = $this->db->insert($query_compare); 
+                if($result_compare)
+                {
+                    $alert = '<span style="color:red">Thêm vào so sánh thành công</span>' ;
+                    return $alert;
+                }  
+                else
+                {
+                    $alert = '<span style="color:red">Product Already Added Not Success</span>' ;
+                    return $alert;
+        
+                }  
+            }
+        }
+        /// SEARCH PRODUCT
+
+        public function get_product_search($productSearch)
+        {
+            $productSearch  = mysqli_real_escape_string($this->db->link,$productSearch);
+            $query          = "SELECT * FROM tbl_product AS p , tbl_category AS c  WHERE p.catId = c.catId AND ( (productName LIKE '%$productSearch%') OR (catName LIKE '%$productSearch%') )  " ;
+            $result         = $this->db->select($query) ;
+            if($result)
+            {
+                return $result ;
+            }
+            else
+            {
+                echo '<h2 style = "color:red ; margin-left:40% ;">Không tìm thấy sản phẩm</h2>' ;
+            }
+        }
+
 
     }
     

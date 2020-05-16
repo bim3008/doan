@@ -26,7 +26,7 @@
                 }
             
             ?>
-			<div class="section group">	
+			<div class="section group" style="display: table">	
             <?php
                     if(isset($updateProfile))
                     {

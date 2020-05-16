@@ -1,7 +1,7 @@
 <?php 
 	
 		require_once 'inc/header.php';
-		require_once 'inc/silder.php';
+	//	require_once 'inc/silder.php';
 
 ?>
  <div class="main">

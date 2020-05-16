@@ -16,6 +16,12 @@
 								$price = $_GET['price'];
 								$status = $cart->proccess_status($id,$price);
 							}
+							if(isset($_GET['proccessedid']) && isset($_GET['price']))
+							{
+								$id = $_GET['proccessedid'];
+								$price = $_GET['price'];
+								$delete_order = $cart->delete_process($id,$price);
+							}
 					?>
 					<thead>
 						
@@ -57,10 +63,9 @@
 									{ ?>
 										 <a href="?proccessid=<?php echo $result['customer_id'];?>&price=<?php echo $result['price']?>">No Process</a> 
 									<?php }
-									else
-									{
-										echo '<a href="">Processed</a>' ;	
-									}
+									else{ ?>
+										<a href="?proccessedid=<?php echo $result['customer_id'];?>&price=<?php echo $result['price']?>">Processed</a> 	
+									<?php }
 							?></td>
 						</tr>
 						<?php 

@@ -148,6 +148,16 @@
             $result = $this->db->update($query) ;
             return $query ;
         }
+        // Delete thông tin đặt hàng
+        public function delete_process($id,$price)
+        {
+            $id    = mysqli_real_escape_string($this->db->link,$id);
+            $price = mysqli_real_escape_string($this->db->link,$price);
+
+            $query  = "DELETE FROM tbl_oder WHERE customer_id = '$id' AND price = '$price' " ;
+            $result = $this->db->delete($query) ;
+            return $result ; 
+        }
     }
     
 ?>

@@ -423,7 +423,7 @@ p.note{
 /**** Header Botttom Left ****/
 .header_bottom_left{
 	float:left;
-	width:50%;
+	width:30%;
 	padding-top:6px;
 }
 .header_bottom_img{
@@ -532,7 +532,7 @@ p.note{
 	padding-top: 15px;
 }
 .content{
-	padding:20px 0;
+	padding: 0;
 	background:#FFF;
 }
 .content h2{ 
@@ -1677,7 +1677,8 @@ p.terms {
     }
     .header_bottom_right_images {
     	margin-left:0;
-    }
+	}
+
     .listview_1_of_2{
     	margin: 1.4% 0 0% 1.6%;
     }

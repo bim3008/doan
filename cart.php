@@ -61,7 +61,7 @@
 							<tr>
 								<td><?php echo  $result['productName']; ?></td>
 								<td><img src="admin/uploads/<?php echo  $result['image_cart']; ?>" alt=""/></td>
-								<td><?php echo  $result['price']; ?></td>
+								<td><?php echo $fm->formatDollars($result['price']) ;  ?></td>
 								<td>
 									<form action="" method="post">
 										<input type="hidden" name="cartid"   value="<?php echo $result['cartId'] ;?>">
@@ -72,7 +72,7 @@
 								<td>
 								<?php   
 									$total = $result['price'] *  $result['quantity'] ;
-									if(isset($total)) echo $total
+									if(isset($total)) echo $fm->formatDollars($total) ;
 								
 								?></td> 
 								<td><a href="?cartid=<?php echo $result['cartId'] ;?> ">Xóa</a></td>
@@ -87,29 +87,12 @@
 						</table>
 
 						<table style="float:right;text-align:left;" width="40%">
-							 <tr>
-								<th>Sub Total : </th>
-								<td><?php if(isset($subtotal)) echo $subtotal ;?></td>
-							</tr>
-
-							 <tr>
-								<th>VAT : </th>
-								<td>
-									<?php
-										if(isset($subtotal)){
-											echo '10%' ;
-										} 
-
-									?>
-								</td>
-							</tr>
-						
 							<tr>
 								<th>Grand Total :</th>
 									<td>
 										<?php
 												if(isset($subtotal)){
-													echo $grandToltal = $subtotal + ($subtotal*0.1);
+													echo $fm->formatDollars($grandToltal = $subtotal)  ;
 													session::set('sum',$grandToltal);	
 												}																
 										?>

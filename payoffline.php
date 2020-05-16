@@ -69,8 +69,8 @@
                                             <th width="15%">Product Name</th>
                                             <th width="10%">Image</th>
                                             <th width="25%">Price</th>
-                                            <th width="15%">Quantity</th>
-                                            <th width="20%">Total Price</th>
+                                            <th width="5%">Quantity</th>
+                                            <th width="30%">Total Price</th>
                                         </tr>
                                         <?php
                                             //Hiển thị sản phẩm
@@ -86,7 +86,7 @@
                                             <td><?php echo  $i; ?></td>
                                             <td><?php echo  $result['productName']; ?></td>
                                             <td><img src="admin/uploads/<?php echo  $result['image_cart']; ?>" alt=""/></td>
-                                            <td><?php echo  $result['price'] . " ". "VNĐ"; ?></td>
+                                            <td><?php echo $fm->formatDollars($result['price']) ; ?></td>
                                             <td>
                                                 <form action="" method="post">
                                                     <input type="hidden" name="cartid"   value="<?php echo $result['cartId'] ;?>">
@@ -96,7 +96,7 @@
                                             <td>
                                             <?php   
                                                 $total = $result['price'] *  $result['quantity'] ;
-                                                if(isset($total)) echo $total . " ". "VNĐ" ; 
+                                                if(isset($total)) echo $fm->formatDollars($total) ; 
                                             
                                             ?></td> 
                                         </tr>
@@ -115,7 +115,7 @@
                                                 <td>
                                                     <?php
                                                             if(isset($subtotal)){
-                                                                echo $grandToltal = $subtotal + ($subtotal*0.1);
+                                                                echo $fm->formatDollars($grandToltal = $subtotal);
                                                                 session::set('sum',$grandToltal);	
                                                             }																
                                                     ?>

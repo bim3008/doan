@@ -33,6 +33,11 @@ class Format{
     }
     return $title = ucfirst($title);
    }
+   function formatDollars($dollars)
+   {
+       $formatted = number_format(sprintf('%0.2f', preg_replace("/[^0-9.]/", "", $dollars)))." "."VNĐ";
+       return $dollars < 0 ? "({$formatted})" : "{$formatted}";
+   }
 }
 ?>
  
