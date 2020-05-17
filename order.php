@@ -43,7 +43,7 @@
                                        echo 'Đang xử lý' ; } else{echo 'Đã xử lý' ;}
                                 
                          ;?></td>
-                        <td><?php echo $result['date'] ;?></td>
+                        <td><?php echo $fm->formatDate($result['date']) ;?></td>
                     
                 </tr> 
                         

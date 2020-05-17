@@ -8,9 +8,9 @@
                 header('location:index.php') ;
         }
         {   
-           echo  $productSearch = $_POST['search'] ;
-           //$productSearch = preg_replace("#[^0-9a-z]#i", "", $productSearch);
-            //echo $productSearch = convert_vi_to_en($productSearch);
+                 $productSearch = $_POST['search'] ;
+                 //$productSearch = preg_replace("#[^0-9a-z]#i", "", $productSearch);
+                //  echo $productSearch = convert_vi_to_en($productSearch);
         }
 
 ?>

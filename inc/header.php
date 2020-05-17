@@ -16,7 +16,7 @@
 	require_once 'helpers/format.php';
 
 	spl_autoload_register(function ($class){
-		require_once 'classes/'. $class. '.php';
+		require_once 'classes/'. $class.'.php';
 	});
 
 	$db     	= new Database();
@@ -27,6 +27,7 @@
 	$pr 		= new product();
 	$cart 		= new cart();
 	$order 		= new order();
+	$comment    = new comments();
 
 ?>
 <!DOCTYPE HTML>

@@ -109,7 +109,7 @@
             }
             else
             {
-                $query  = "UPDATE tbl_customer SET fullname = '$name' , address_cs = '$address',email = '$email' ,zipcode = '$zipcode' ,phone= '$phone'
+                $query  = "UPDATE tbl_customer SET fullname = '$name' , address_cs = '$address',email = '$email' ,zipcode = '$zipcode' , phone= '$phone'
                            WHERE id = '$id'
                 ";
                 $result = $this->db->update($query);
@@ -131,8 +131,16 @@
             return $result ;
 
         }
+        public function insertComment($customer_id,$data,$id)
+        {
+            $customer_id = mysqli_real_escape_string($this->db->link,$customer_id) ;
+            $messge      = mysqli_real_escape_string($this->db->link,$data['messge']) ;
+            $id = mysqli_real_escape_string($this->db->link,$id) ;
 
+
+            $query  = "INSERT INTO  tbl_comment(customer_id,comment,productId)  VALUES ('$customer_id','$messge','$id') " ;
+            $result = $this->db->insert($query) ; 
+        }
         
     }
     
-?>
