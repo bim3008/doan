@@ -74,7 +74,7 @@
 										if($check_cart)
 										{
 											$sum = session::get("sum") ;
-											echo $sum." "."VNĐ";	 
+											echo $fm->formatDollars($sum);	 
 										}
 										else
 										{
