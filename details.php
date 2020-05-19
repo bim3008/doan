@@ -91,35 +91,46 @@
 		<div class="product-desc">
 				<h2>Bình luận</h2>		
 					</div>
-			<?php
-				
-					if($customer_id)
-					{ ?>
-						    <form action="" method="POST">
-								<textarea style="margin:20px 0px 0px;" name="messge" id="" cols="98" rows="8" placeholder="Viêt bình luận"></textarea>
-								<input style="margin-top:5px ; width:60px ; height:30px ; margin-left: 91.5%;" type="submit" name="submitComment" value="Gửi">
-							</form>
-					<?php }
-					else
-					{
-						echo "" ;
-					}
-			?>		
+			
 			<?php
 					$showComment = $comment->showComment($id) ;
-					if($showComment)
+					if(!$showComment)
+					{
+							echo '<h2 style="text-align: center;margin-top: 10px;color: red;">Sản phẩm chưa có bình luận</h2>' ;
+					}
+					else
 					{
 						while($result_comment = $showComment->fetch_assoc())
 						{
 					
 			?>
-					<input type="text" value="<?php echo  $result_comment['comment'] ;?>">
-					<p><?php echo  $result_comment['fullname']?></p>
-					<p><?php echo  $result_comment['date']?></p>
+					
+					<div style="border: 1px solid ; width:700px ;margin:20px 0px ; background-color: #EEEEEE;  margin-top:20px ; ">
+
+						<div class = "name" style="font-size: 20px;color:red ; padding:10px"> Tên:<?php  echo  $result_comment['fullname']?> </div>
+					 	<div  class = "comments" style="color: black; padding:5px;"><?php echo  $result_comment['comment'] ;?></div>
+					
+						<div  class = "date"  style="margin-left:550px;font-family: fantasy;"><?php echo  $result_comment['date']?></div>	
+					</div>
+						
 		
 			<?php 
-						}}
+						}
+
+					}											
+					
 			?>
+			<?php
+				
+				if($customer_id)
+				{ ?>
+						<form action="" method="POST">
+							<textarea style="margin:20px 0px 0px;" name="messge" id="" cols="98" rows="8" placeholder="Viêt bình luận"></textarea>
+							<input style="margin-top:5px ; width:60px ; height:30px ; margin-left: 91.5%;" type="submit" name="submitComment" value="Gửi">
+						</form>
+				<?php }
+
+		?>		
 
 				
  		</div>

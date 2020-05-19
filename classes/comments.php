@@ -15,7 +15,7 @@
 
         public function showComment($id)
         {
-            $query  = "SELECT * FROM tbl_comment AS c , tbl_customer AS k WHERE  c.customer_id = k.id AND productId = '$id' " ;
+            $query  = "SELECT * FROM tbl_comment AS c , tbl_customer AS k WHERE  c.customer_id = k.id AND productId = '$id'  ORDER BY c.id DESC " ;
             $result = $this->db->select($query) ; 
             return $result ;
         }
