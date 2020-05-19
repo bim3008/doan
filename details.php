@@ -73,17 +73,13 @@
 										echo 'Product Already Added';
 									}
 							?>			
-					</div>
-				
+					</div>			
 				</div>
 				<div class="product-desc">
 				<h2>Chi tiết sản phẩm</h2>
 				<p><?php echo $result_details['description_product'] ;?></p>
 			</div>
-
-
-			
-		<!-- PHP -->
+				<!-- PHP -->
 				<?php
 					}}
 				?>
@@ -111,9 +107,7 @@
 					 	<div  class = "comments" style="color: black; padding:5px;"><?php echo  $result_comment['comment'] ;?></div>
 					
 						<div  class = "date"  style="margin-left:550px;font-family: fantasy;"><?php echo  $result_comment['date']?></div>	
-					</div>
-						
-		
+					</div>	
 			<?php 
 						}
 

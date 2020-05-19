@@ -1,10 +1,17 @@
+<style>
+	a:hover{
 
+
+		color: red;
+	}
+
+</style>
 	<div class="header_bottom">
 		<div class="header_bottom_left" style="width: 25%;">
 			<div class="section group">
 				<div class="content" style="width:100% ;margin-top: 20px;">
 					<div style=" padding:0px">
-						<h2 style="margin-top: -20px; text-align: center; ">DANH MỤC</h2>
+						<h2 style="margin-top: -20px; text-align: center; font-size:45px; ">DANH MỤC</h2>
 							<th>
 							<?php 
 									$showall_cat = $ct->showAllCategory_FontEnd() ;
@@ -12,17 +19,17 @@
 									{
 										while($result_show=$showall_cat->fetch_assoc()){
 								
-								?>
-									<td><a href="productbycat.php?catid=<?php  echo $result_show['catId'] ;?>"><?php echo '<h2> '.$result_show["catName"].'</h2>' ;?></a></td>
-								<?php
+							?>
+									<td class="listCatogory"> <a href="productbycat.php?catid=<?php  echo $result_show['catId'] ;?>"><?php echo '<p style ="font-size: 30px;margin: 20px 0px 0px 10px;"> '.$result_show["catName"].'</p>' ;?></a>
+
+									</td>
+							<?php
 									}
 								}
-								?>
+							?>
 							</th>	
 					</div>		
-			</div>
-		
-		
+			</div>		
 		</div>				
 		  <div class="clear"></div>
 			</div>
