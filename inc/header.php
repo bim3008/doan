@@ -1,8 +1,7 @@
 <?php
 	require_once 'lib/session.php';
 	Session::init();
-
-?>
+?>			
 
 <?php
   header("Cache-Control: no-cache, must-revalidate");
@@ -91,6 +90,7 @@
 				{
 					$deteleCart = $cart ->delete_all_in_cart();
 					Session::destroy() ;
+					header('location:index.php');
 				}
 			?>
 		   <div class="login">
@@ -110,15 +110,15 @@
 	 <div class="clear"></div>
  </div>
 <div class="menu">
-	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Home</a></li>
-	  <li><a href="cart.php">Cart</a></li>
-	  <li><a href="contact.php">Contact</a> </li>
+	<ul   id="dc_mega-menu-orange" class="dc_mm-orange">
+	  <li ><a style="font-family: none" href="index.php">Trang chủ</a></li>
+	  <li ><a style="font-family: none" href="cart.php">Giỏ hàng</a></li>
+	  
 	  <?php
 	  		$check_profile= Session::get('customer_login');
 			  if($check_profile){?>
 
-				 <li><a href="profile.php">Profile</a></li>
+				 <li ><a style="font-family: none" href="profile.php">Hồ sơ</a></li>
 				  
 			  <?php } else 
 
@@ -128,12 +128,13 @@
 	  		$check_order= Session::get('customer_login');
 			  if($check_order){?>
 
-				 <li><a href="order.php">Order</a></li>
+				 <li  ><a style="font-family: none" href="order.php">Lịch sử</a></li>
 				  
 			  <?php } else 
 
 				  echo "" ;
 	  ?>
+	<li ><a style="font-family: none" href="contact.php">Liên hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>
 </div>

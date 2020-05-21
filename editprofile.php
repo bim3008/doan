@@ -60,11 +60,6 @@
 
                             </tr>
                             <tr>
-                                    <td>Zipcode</td>
-                                    <td><input type="text" name="zipcode" value="<?php echo  $result["zipcode"] ;?>"style="width: 250px; height: 25px;">  </td>
-                            </tr>
-
-                            <tr>
                                     <td>Phone</td>
                                     <td><input type="text" name="phone" value="<?php echo  $result["phone"] ;?>"style="width: 250px; height: 25px;">  </td>
 

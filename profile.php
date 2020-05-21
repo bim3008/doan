@@ -36,11 +36,6 @@
                                 <td><?php echo  $result["email"] ;?></td>
                         </tr>
                         <tr>
-                                <td>Zipcode</td>
-                                <td><?php echo  $result["zipcode"] ;?></td>
-                        </tr>
-
-                        <tr>
                                 <td>Phone</td>
                                 <td><?php echo  $result["phone"] ;?></td>
                         </tr>

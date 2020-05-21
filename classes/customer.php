@@ -21,16 +21,15 @@
             $email      = mysqli_real_escape_string($this->db->link,$data['email']);
             $fullname   = mysqli_real_escape_string($this->db->link,$data['fullname']);
             $address    = mysqli_real_escape_string($this->db->link,$data['address']);
-            $zipcode   = mysqli_real_escape_string($this->db->link,$data['zipcode']);
             $phone      = mysqli_real_escape_string($this->db->link,$data['phone']);
 
             if($username == " " || $password == " " || $repassword == " " || $email == "" || 
-               $fullname == " " || $address == " " || $zipcode == "" || $phone == " " ){
+               $fullname == " " || $address == " "  ||   $phone == " " ){
 
                 echo "Please complete all information" ;
             }
             else
-            {
+            {              
                 if($password!= $repassword)
                 {
                     echo "Your Password  Not The Same" ;
@@ -40,22 +39,28 @@
                     $query        = "SELECT * FROM tbl_customer WHERE email = '$email' " ;
                     $result_email = $this->db->select($query);
 
-                    if($result_email)
+                    $query_username        = "SELECT * FROM tbl_customer WHERE username = '$username' " ;
+                    $result_username = $this->db->select($query_username);
+                    
+                    if($result_username){
+                        echo "Tài khoản của bạn đã tồn tại";
+                    }
+                    else if($result_email)
                     {
-                        echo "Your Email Already Existed ";
+                        echo "Email của bạn đã tồn tại ";
                     }
                     else
                     {
-                        $query_insert  = " INSERT INTO tbl_customer(username,password_cs,email,fullname,address_cs,zipcode,phone) 
-                                          VALUES ('$username','$password','$email','$fullname','$address','$zipcode','$phone')" ;
+                        $query_insert  = " INSERT INTO tbl_customer(username,password_cs,email,fullname,address_cs,phone) 
+                                          VALUES ('$username','$password','$email','$fullname','$address','$phone')" ;
                         $result_insert = $this->db->insert($query_insert) ;
                         if($result_insert)
                         {
-                            echo  "Registion Successfully" ;
+                            echo  "ĐĂNG KÝ THÀNH CÔNG !!" ;
                         }
                         else
                         {
-                            echo  "Registion Not Success" ;
+                            echo  "ĐĂNG KÝ THẤT BẠI !!" ;
                         }
                     }
                 }

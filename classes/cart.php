@@ -105,7 +105,7 @@
         {
             $sId = session_id();
             $query = " DELETE  FROM tbl_cart WHERE sessionId = '$sId' ";
-            $result = $this->db->select($query);
+            $result = $this->db->delete($query);
             return $result ;
         }
         // Khi người dùng ORDER
