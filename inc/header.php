@@ -1,5 +1,6 @@
 <?php
 	require_once 'lib/session.php';
+	// require_once './fb-callback.php' ;
 	Session::init();
 ?>			
 
@@ -96,11 +97,23 @@
 		   <div class="login">
 			   <!-- Kiểm tra đăng nhập -->
 					<?php
-					$check_login = Session::get('customer_login');
+					$check_login     = Session::get('customer_login');
+					$accessToken     = Session::get('accesstoken'); 
+					$userData        = Session::get('userData'); 
+
+					// echo "<pre>" ;
+					// print_r($userData);
+					// echo "</pre>" ;
 					if($check_login){?>
 						<!-- Lấy id của Customer -->
 						<a href="?customerid=<?php echo Session::get('customer_id') ; ?>">Logout</a>  
-					<?php } else {?> 
+					<?php } 
+
+					else if($accessToken)
+					{?>
+						<a href="?customerid=<?php echo $userData['id'] ; ?>">Logout</a>
+					<?php }
+					else { ?>
 	
 						<a href="login.php">Login</a>
 				<?php } ?>						

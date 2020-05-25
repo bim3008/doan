@@ -68,17 +68,18 @@
 									<?php }
 							?></td>
 						</tr>
-						<?php 
-						  	   }
-					       }			
-					?>						
+							
 					</tbody>
 					
+					
 					</table>
+					
                </div>
             </div>
 		</div>
+		
 </form>
+
 <script type="text/javascript">
     $(document).ready(function () {
         setupLeftMenu();

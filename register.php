@@ -47,7 +47,7 @@
                                         echo $insertCustomer ;
                                     }		
 		                     ?>
-				<p>Don't have an Account? <a href="login1.php"> Đăng nhập!</a></p>
+				<p>Don't have an Account? <a href="login.php"> Đăng nhập!</a></p>
 			</div>
 		</div>
 		<!-- copyright -->

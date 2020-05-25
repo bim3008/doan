@@ -10,6 +10,13 @@
 				$loginAccount = $login_customer->login_customer($_POST) ;
 			}			
 ?>
+<?php
+        require_once 'config.php' ;
+        $redirectURL = 'http://localhost/doan_website/doan/fb-callback.php' ;
+        $permission  = ['email'];
+        $loginURL    = $helper->getLoginUrl($redirectURL,$permission) ; // link dev.facebook
+        
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +83,7 @@
 					</div>
 
 					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
+						<a  onclick="window.location ='<?php echo  $loginURL ;?>' " href="#" class="login100-social-item bg1">
 							<i class="fa fa-facebook"></i>
 						</a>
 
