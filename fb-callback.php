@@ -4,10 +4,8 @@
 if (!session_id()) {
     session_start();
 }
-
 session_status() ;
 require_once 'config.php' ;
-
     try
     {
         $accessToken = $helper->getAccessToken() ;
@@ -32,8 +30,6 @@ require_once 'config.php' ;
     $response = $FB->get("me?fields=id,name,email,location",$accessToken->getValue()) ;
 
     $userData = $response->getGraphNode()->asArray() ;
-   
- 
     // $_SESSION['userData']    = $userData ; 
     // $_SESSION['accesstoken'] = $accessToken;
     // foreach($userData as $key => $value){
