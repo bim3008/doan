@@ -3,14 +3,13 @@
 	// require_once './fb-callback.php' ;
 	Session::init();
 ?>			
-
+<?php  error_reporting(0); ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
   header("Cache-Control: max-age=2592000");
 ?>
-
 <?php
 	require_once 'lib/database.php';
 	require_once 'helpers/format.php';
@@ -18,7 +17,6 @@
 	spl_autoload_register(function ($class){
 		require_once 'classes/'. $class.'.php';
 	});
-
 	$db     	= new Database();
 	$fm			= new Format();
 	$br			= new brand();
@@ -28,7 +26,6 @@
 	$cart 		= new cart();
 	$order 		= new order();
 	$comment    = new comments();
-
 ?>
 <!DOCTYPE HTML>
 <head>
@@ -53,6 +50,16 @@
 </script>
 </head>
 <body>
+<?php
+	$accessToken     = Session::get('accesstoken'); 
+	$getInformationLoginFacebook = new customer() ;
+	if(isset($accessToken))
+	{
+		$accessToken     = Session::get('accesstoken'); 
+		$userData        = Session::get('userData'); 
+		$inserInformationLoginFacebook = $getInformationLoginFacebook->insertFacebook($userData);		
+	}
+?>
   <div class="wrap">
 		<div class="header_top">
 			<div class="logo">
@@ -100,19 +107,13 @@
 					$check_login     = Session::get('customer_login');
 					$accessToken     = Session::get('accesstoken'); 
 					$userData        = Session::get('userData'); 
-
 					// echo "<pre>" ;
 					// print_r($userData);
 					// echo "</pre>" ;
-					if($check_login){?>
+					if($check_login || $accessToken){?>
 						<!-- Lấy id của Customer -->
 						<a href="?customerid=<?php echo Session::get('customer_id') ; ?>">Logout</a>  
 					<?php } 
-
-					else if($accessToken)
-					{?>
-						<a href="?customerid=<?php echo $userData['id'] ; ?>">Logout</a>
-					<?php }
 					else { ?>
 	
 						<a href="login.php">Login</a>
@@ -130,22 +131,26 @@
 	  <?php
 	  		$check_profile= Session::get('customer_login');
 			  if($check_profile){?>
-
-				 <li ><a style="font-family: none" href="profile.php">Hồ sơ</a></li>
-				  
-			  <?php } else 
-
-				  echo "" ;
+				 <li ><a style="font-family: none" href="profile.php">Hồ sơ</a></li>  
+			  <?php } 
+			  else
+			  {
+				  echo "" ;	
+			  }				 
 	  ?>
 	  <?php	
 	  		$check_order= Session::get('customer_login');
 			  if($check_order){?>
-
-				 <li  ><a style="font-family: none" href="order.php">Lịch sử</a></li>
-				  
-			  <?php } else 
-
+				 <li  ><a style="font-family: none" href="order.php">Lịch sử</a></li>			  
+			  <?php } 
+			  else if($accessToken)
+			  {
+				  echo ' <li ><a style="font-family: none" href="order.php">Lịch sử</a></li>' ;
+			  }
+			  else 
+			  {
 				  echo "" ;
+			  }			  
 	  ?>
 	<li ><a style="font-family: none" href="contact.php">Liên hệ</a> </li>
 	  <div class="clear"></div>

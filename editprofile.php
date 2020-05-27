@@ -21,6 +21,7 @@
                 if(isset($_POST['updateprofile']))
                 {
                     $id_update = Session::get('customer_id');
+                    $customer = new customer() ;
                     $updateProfile = $customer->update_profile($_POST,$id_update) ;
                     header('location:profile.php');
                 }

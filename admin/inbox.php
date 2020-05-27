@@ -1,4 +1,4 @@
-﻿<?php require_once 'inc/header.php';?>
+﻿﻿<?php require_once 'inc/header.php';?>
 <?php require_once 'inc/sidebar.php';?>
 <?php require_once '../classes/cart.php' ;?>
 <?php require_once '../helpers/format.php' ;?>
@@ -68,7 +68,9 @@
 									<?php }
 							?></td>
 						</tr>
-							
+						<?php
+								}}
+						?>			
 					</tbody>
 					
 					
@@ -80,7 +82,7 @@
 		
 </form>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function () {
         setupLeftMenu();
 
@@ -88,4 +90,5 @@
         setSidebarHeight();
     });
 </script>
-<?php require_once 'inc/footer.php';?>
+
+<?php  require_once 'inc/footer.php' ;?> -->

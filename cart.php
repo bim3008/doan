@@ -23,9 +23,7 @@
 						{
 							$delete = $cart->deleteCart($cartId);
 						}
-					}
-
-						
+					}						
 				?>
 					<h2>Your Cart</h2>
 		
@@ -107,14 +105,21 @@
 						<div class="shopright">
 							<?php
 									$check_login = Session::get('customer_login');
-									if($check_login)
+									$accessToken = Session::get('accesstoken');
+									if($check_login || $accessToken)
 									{
 										echo '<a href="payment.php"> <img src="images/check.png" alt="" /></a>' ;
 									}
+									// else if($accessToken)
+									// {
+									// 	 echo '<a href="form.php"> <img src="images/check.png" alt="" /></a>' ;
+									// }
 									else
 									{
 										echo '<a href="login.php"> <img src="images/check.png" alt="" /></a>' ;
+
 									}
+									
 							?>
 							
 						</div>

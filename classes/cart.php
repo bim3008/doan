@@ -119,15 +119,15 @@
                 // Thêm vào bảng order
                 while($result= $get_order->fetch_assoc())
                 {
-                    $productId   = $result['productId'];
-                    $productName = $result['productName'];
-                    $quantity    = $result['quantity'];
-                    $price       = $result['price'] * $quantity;
-                    $image       = $result['image_cart'];
-                    $customerid  = $customer_id ;
-                    $query_order = " INSERT INTO tbl_oder(productId,productName,price,quantity,image_order,customer_id) 
-                    VALUES ('$productId','$productName',' $price','$quantity','$image', ' $customerid')" ;
-                    $insert_order = $this->db->insert($query_order) ;
+                        $productId   = $result['productId'];
+                        $productName = $result['productName'];
+                        $quantity    = $result['quantity'];
+                        $price       = $result['price'] * $quantity;
+                        $image       = $result['image_cart'];
+                        $customerid  = $customer_id ;
+                        $query_order = " INSERT INTO tbl_oder(productId,productName,price,quantity,image_order,customer_id) 
+                        VALUES ('$productId','$productName',' $price','$quantity','$image', ' $customerid')" ;
+                        $insert_order = $this->db->insert($query_order) ;
                 }
             }
         }

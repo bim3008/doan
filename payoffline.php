@@ -39,16 +39,14 @@
    
 </style>
 <?php
-    
+    $accessToken     = Session::get('accesstoken'); 
     if(isset($_GET['orderid']) && $_GET['orderid'] == 'order')
     {
         $customer_id = Session::get('customer_id') ;
-        $insertOrder = $cart-> insert_order( $customer_id) ;
+        $insertOrder = $cart-> insert_order($customer_id) ;
         $deteleCart = $cart ->delete_all_in_cart();
         header('location:success.php');
-
     }
-
 ?>
 <form action="" method="">
     <div class="main">
@@ -114,7 +112,7 @@
                                             <th>Grand Total :</th>
                                                 <td>
                                                     <?php
-                                                            if(isset($subtotal)){
+                                                           if(isset($subtotal)){
                                                                 echo $fm->formatDollars($grandToltal = $subtotal);
                                                                 session::set('sum',$grandToltal);	
                                                             }																
@@ -122,20 +120,17 @@
                                                 </td>
                                         </tr>   
                                 </table>
-                                </div>   
-                            
+                                </div>                            
                         </div>
                         <div class="box_right">
                         <table class="tblone">
                     <?php
                         $id = Session::get('customer_id');
-
                         $check_profileCustomer = $customer->show_profile_customer($id) ;  
                         if($check_profileCustomer)
                         {
                             while($result =$check_profileCustomer->fetch_assoc())
-                            {
-                            
+                            {                          
                     ?>
                             <tr>
                                     <td>Name</td>
@@ -154,14 +149,35 @@
                                     <td><?php echo  $result["phone"] ;?></td>
                             </tr>
                         <?php 
-                            }}
-                        ?>
-                    
+                            }
+                        }else if(isset($accessToken))
+                        {
+                            $userData = Session::get('userData'); 
+                            $string = '
+                            <tr>
+                                    <td>Name</td>
+                                    <td>   '.$userData["name"].'</td>
+                            </tr>
+                            <tr>
+                                    <td>Addrees</td>
+                                    <td> '.$userData["location"]["name"] .'</td>
+                            </tr>
+                            <tr>
+                                    <td>Email</td>
+                                    <td> '.$userData["email"].'</td>
+                            </tr>
+                            <tr>
+                                    <td>Phone</td>
+                                    <td> '.$userData["phone"].'</td>
+                            </tr> ' ;
+
+                            echo $string;
+                        }
+                        ?>                    
                     </table>
                         </div>
                     </div>
                 </div>
-
                 <a href="?orderid=order" class="ordersubmit">ORDER</a>
             </div>
 </div>

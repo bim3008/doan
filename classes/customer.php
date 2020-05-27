@@ -103,18 +103,17 @@
         
         public function update_profile($data,$id)
         {
-            $name        = mysqli_real_escape_string($this->db->link,$data['name']);
-            $email       = mysqli_real_escape_string($this->db->link,$data['email']);
+           echo $name        = mysqli_real_escape_string($this->db->link,$data['name']);
+           echo  $email       = mysqli_real_escape_string($this->db->link,$data['email']);
             $address     = mysqli_real_escape_string($this->db->link,$data['address']);
-            $zipcode     = mysqli_real_escape_string($this->db->link,$data['zipcode']);
             $phone       = mysqli_real_escape_string($this->db->link,$data['phone']);
-            if($name   == "" || $address == "" || $zipcode =="" || $phone == "" || $email == "")
+            if($name   == "" || $address == "" || $phone == "" || $email == "")
             {
                 echo 'Please Not Empty' ;
             }
             else
             {
-                $query  = "UPDATE tbl_customer SET fullname = '$name' , address_cs = '$address',email = '$email' ,zipcode = '$zipcode' , phone= '$phone'
+                $query  = "UPDATE tbl_customer SET fullname = '$name' , address_cs = '$address',email = '$email' , phone= '$phone'
                            WHERE id = '$id'
                 ";
                 $result = $this->db->update($query);
@@ -146,6 +145,34 @@
             $query  = "INSERT INTO  tbl_comment(customer_id,comment,productId)  VALUES ('$customer_id','$messge','$id') " ;
             $result = $this->db->insert($query) ; 
         }
+
+        public function insertFacebook($userData)
+        {
+           $API= mysqli_real_escape_string($this->db->link,$userData['id']) ;
+           $name     = mysqli_real_escape_string($this->db->link,$userData['name']);
+           $email    = mysqli_real_escape_string($this->db->link,$userData['email']);
+           $address  = mysqli_real_escape_string($this->db->link,$userData['location']['name']);
+           $query  = "INSERT INTO tbl_fb(`api`,`fullname`,`email`,`address`) VALUES ('$API','$name','$email','$address')
+                      " ;
+           $result =$this->db->insert($query);     
+        }
+     
+        // public function getInforFacebookeOder($data)
+        // {
+        //     $name     = mysqli_real_escape_string($this->db->link,$data['fullname']);
+        //     $email    = mysqli_real_escape_string($this->db->link,$data['email']);
+        //     $address  = mysqli_real_escape_string($this->db->link,$data['location']['name']);
+        //     $phone    = mysqli_real_escape_string($this->db->link,$data['phone']);
+
+        //     $query  = "INSERT INTO tbl_fb(`fullname`,`address`,`email`,`phone`) VALUES ('$name','$address','$email','$phone')" ;
+        //     $result =$this->db->insert($query);
+        //     if($result)
+        //     {
+        //         header('location:payment.php');
+        //     }    
+
+        // }
+
         
     }
     
