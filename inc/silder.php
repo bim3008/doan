@@ -11,7 +11,7 @@
 			<div class="section group">
 				<div class="content" style="width:100% ;margin-top: 20px;">
 					<div style=" padding:0px">
-						<h2 style="margin-top: -20px; text-align: center; font-size:45px; ">DANH MỤC</h2>
+						<h2 style="margin-top: -33px; text-align: center; font-size:45px; ">DANH MỤC</h2>
 							<th>
 							<?php 
 									$showall_cat = $ct->showAllCategory_FontEnd() ;
@@ -39,10 +39,10 @@
 				<section class="slider">
 				  <div class="flexslider">
 					<ul class="slides">
-						<li><img src="images/1.jpg" alt=""/></li>
-						<li><img src="images/2.jpg" alt=""/></li>
-						<li><img src="images/3.jpg" alt=""/></li>
-						<li><img src="images/4.jpg" alt=""/></li>
+						<li><img src="images/11.jpg" alt=""/></li>
+						<li><img src="images/12.jpg" alt=""/></li>
+						<li><img src="images/13.jpg" alt=""/></li>
+						<li><img src="images/14.jpg" alt=""/></li>
 				    </ul>
 				  </div>
 	     	 </section>

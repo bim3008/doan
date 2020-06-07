@@ -12,7 +12,7 @@
 ?>
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Danh Sách Sản Phẩm</h2>
+                <h2>Danh Sách Thương Hiệu</h2>
                 <div class="block"> 
 					<?php
 							if(isset($delete_brand))

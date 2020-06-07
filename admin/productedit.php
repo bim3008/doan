@@ -45,7 +45,7 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
                         <input type="text" name ="nameProduct" value="<?php echo $result_product['productName'] ;?>" class="medium" />
@@ -53,11 +53,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="category" >
-                                <option>------Select Category-----</option>
+                                <option>------Chọn danh mục-----</option>
                             <?php
                                   
                                     $catlist =$cat->showCategory();
@@ -86,11 +86,11 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Brand</label>
+                        <label>Thương hiệu</label>
                     </td>
                     <td>
                         <select id="select" name="brand" >
-                                <option>------Select Brand-----</option>
+                                <option>------Chọn thương hiệu-----</option>
                             <?php
                                     $brand     = new brand() ;
                                     $brandlist =$brand->showBrand();
@@ -121,7 +121,7 @@
 				
 				<tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea class="tinymce" name="description"><?php echo $result_product['description_product'];?></textarea>
@@ -138,7 +138,7 @@
             
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Hình ảnh</label>
                     </td>
                     <td>
                         <input type="file" name="image"> </br>
@@ -148,7 +148,7 @@
 				
 				<tr>
                     <td>
-                        <label>Product Type</label>
+                        <label>Nổi bật/Không nổi bật</label>
                     </td>
                     <td>
                         <select id="select" name="type">
@@ -176,7 +176,7 @@
 				<tr>
                     <td></td>
                     <td>
-                        <input type="submit" name="submit" value="Update" />
+                        <input type="submit" name="submit" value="Cập nhập" />
                     </td>
                 </tr>
             </table>

@@ -15,7 +15,7 @@
 ?>
 <div class="grid_10">
     <div class="box round first grid">
-		<h2>Post List</h2>
+		<h2>Danh sách sản phẩm</h2>
         <div class="block">  
             <table class="data display datatable" id="example">
 			<?php
@@ -28,14 +28,14 @@
 			<thead>
 				<tr>
 					<th>ID</th>
-					<th>Product Name</th>
-					<th>Product Price</th>
-					<th>Product Image</th>
-					<th>Description</th>
-					<th>Type</th>
-					<th>Category</th>
-					<th>Brand</th>
-					<th>Action</th>
+					<th>Tên sản phẩm </th>
+					<th>Giá</th>
+					<th>Hình ảnh</th>
+					<th>Mô tả</th>
+					<th>Nổi bật/Không nổi bật</th>
+					<th>Danh mục</th>
+					<th>Thương hiệu</th>
+					<th>Xử lý</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,16 +57,16 @@
 					<td><?php  echo  $limit = $fm->textShorten( $result['description_product'],10)    ;?></td>
 					<td><?php 
 							if($result['type_product'] == 1){
-								echo "Featured" ;
+								echo "Nổi bật" ;
 							}else
 							{
-								echo "Not Featured" ;
+								echo "Không nổi bật" ;
 							}   
 					?></td>
 					<td><?php echo $result['catName'] ;?></td>
 					<td><?php echo $result['brandName'] ;?></td>
-					<td><a href="productedit.php?id=<?php echo $result['productId'] ;?>">Edit</a> || 
-					<a onclick = " return confirm('Are you want to delete ')" href="?productid=<?php echo $result['productId'] ;?>"> Delete </a></td>
+					<td><a href="productedit.php?id=<?php echo $result['productId'] ;?>">Sửa</a> || 
+					<a onclick = " return confirm('Are you want to delete ')" href="?productid=<?php echo $result['productId'] ;?>"> Xóa </a></td>
 				</tr>
 				<?php
 					}}else{

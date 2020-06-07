@@ -61,20 +61,20 @@
 	}
 ?>
   <div class="wrap">
-		<div class="header_top">
+		<div style="background-color: black;" class="header_top">
 			<div class="logo">
-				<a href="index.php"><img src="images/logo.png" alt="" /></a>
+				<a href="index.php"><img src="images/logo.jpg" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form action="search.php" method="post">
-				    	<input type="text" placeholder="Search for Products" name="search"><input type="submit" value="SEARCH">
+				    	<input type="text" placeholder="Nhập sản phẩm cần tìm" name="search"><input type="submit" value="Tìm kiếm">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
-					<div class="cart">
+					<div style="width: 165px;"  class="cart">
 						<a href="cart.php" title="View my shopping cart" rel="nofollow">
-								<span class="cart_title">Cart</span>
+								<span class="cart_title">Giỏ hàng</span>
 								<span class="no_product">
 									<?php										
 										$check_cart = $cart->check_cart() ;
@@ -101,7 +101,7 @@
 					header('location:index.php');
 				}
 			?>
-		   <div class="login">
+		   <div  style="    width: 100px; margin-left: 50px;line-height: 2;"  class="login">
 			   <!-- Kiểm tra đăng nhập -->
 					<?php
 					$check_login     = Session::get('customer_login');
@@ -112,11 +112,11 @@
 					// echo "</pre>" ;
 					if($check_login || $accessToken){?>
 						<!-- Lấy id của Customer -->
-						<a href="?customerid=<?php echo Session::get('customer_id') ; ?>">Logout</a>  
+						<a style="font-size: 20px" href="?customerid=<?php echo Session::get('customer_id') ; ?>">Đăng xuất</a>  
 					<?php } 
 					else { ?>
 	
-						<a href="login.php">Login</a>
+						<a style="font-size: 20px;" href="login.php">Đăng nhập</a>
 				<?php } ?>						
 			</div>
 		 <div class="clear"></div>

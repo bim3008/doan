@@ -27,19 +27,19 @@
                
                 <tr>
                     <td>
-                        <label>Name</label>
+                        <label>Tên</label>
                     </td>
                     <td>
-                        <input type="text" name ="nameProduct" placeholder="Enter Product Name..." class="medium" />
+                        <input type="text" name ="nameProduct" placeholder="Nhập tên sản phẩm..." class="medium" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Category</label>
+                        <label>Danh mục</label>
                     </td>
                     <td>
                         <select id="select" name="category" >
-                                <option>------Select Category-----</option>
+                                <option>------Chọn danh mục-----</option>
                             <?php
                                     $cat     = new category() ;
                                     $catlist =$cat->showCategory();
@@ -59,11 +59,11 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Brand</label>
+                        <label>Thương hiệu</label>
                     </td>
                     <td>
                         <select id="select" name="brand" >
-                                <option>------Select Brand-----</option>
+                                <option>------Chọn thương hiệu-----</option>
                             <?php
                                     $brand     = new brand() ;
                                     $brandlist =$brand->showBrand();
@@ -86,7 +86,7 @@
 				
 				<tr>
                     <td style="vertical-align: top; padding-top: 9px;">
-                        <label>Description</label>
+                        <label>Mô tả</label>
                     </td>
                     <td>
                         <textarea class="tinymce" name="description"></textarea>
@@ -94,7 +94,7 @@
                 </tr>
 				<tr>
                     <td>
-                        <label>Price</label>
+                        <label>Giá</label>
                     </td>
                     <td>
                         <input type="text" placeholder="Enter Price..." class="medium" name="price"/>
@@ -103,7 +103,7 @@
             
                 <tr>
                     <td>
-                        <label>Upload Image</label>
+                        <label>Hình ảnh </label>
                     </td>
                     <td>
                         <input type="file" name="image"/>
@@ -112,13 +112,13 @@
 				
 				<tr>
                     <td>
-                        <label>Product Type</label>
+                        <label>Nổi bật/Không nổi bật</label>
                     </td>
                     <td>
                         <select id="select" name="type">
                             <option>Select Type</option>
-                            <option value="1">Featured</option>
-                            <option value="0">Non-Featured</option>
+                            <option value="1">Nổi bật</option>
+                            <option value="0">Không nổi bật</option>
                         </select>
                     </td>
                 </tr>

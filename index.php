@@ -6,13 +6,13 @@
 ?>
  <div class="main">
     <div class="content">
-    	<div class="content_top" style="margin-top: 30px;">
+    	<div class="content_top" style="margin-top: 30px;background-color: red;">
     		<div class="heading">
     		<h3>Sản phẩm nổi bật</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
-	      <div class="section group">
+	      <div "  class="section group">
 			<!-- START SẢN PHẨM NỔI BẬT -->
 			  <?php
 					// LẤY SẢN PHẨM NỔI BẬT 	  
@@ -29,21 +29,18 @@
 					 <p><span class="price"><?php echo  $fm->formatDollars($result['price'] . " ". "VNĐ" );?></span></p>
 				     <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']?>" class="details">Chi tiết</a></span></div>
 				</div>
-				<?php
-							
+				<?php							
 						}
 					}			
 				?>
 			<!-- END SẢN PHẨM NỔI BẬT -->
 			</div>
-			<div class="content_bottom">
+			<div style="background-color: red;"  class="content_bottom">
     				<div class="heading">
     					<h3>Sản phẩm mới</h3>
     				</div>
     				<div class="clear"></div>
 			</div>
-			
-
 			<div class="section group">			
 				<?php
 						// LẤY SẢN PHẨM MỚI  

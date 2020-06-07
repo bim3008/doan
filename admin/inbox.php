@@ -5,7 +5,7 @@
 <form action="">
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Inbox</h2>
+                <h2>Đơn đặt hàng</h2>
                 <div class="block">        
                     <table class="data display datatable" id="example">
 					<?php
@@ -23,17 +23,16 @@
 								$delete_order = $cart->delete_process($id,$price);
 							}
 					?>
-					<thead>
-						
+					<thead						
 						<tr>
 							<th>No.</th>
-							<th>Customer ID</th>
-							<th>Date Order</th>
-							<th>Product</th>
-							<th>Quantity</th>
-							<th>Price</th>
-							<th>Information</th>
-							<th>Action</th>
+							<th>Khách hàng ID</th>
+							<th>Ngày đặt hàng</th>
+							<th>Sản phẩm</th>
+							<th>Số lượng</th>
+							<th>Giá</th>
+							<th>Thông tin khách hàng</th>
+							<th>Trạng thái</th>
 						</tr>
 						
 					</thead>
@@ -57,14 +56,14 @@
 							<td><?php echo $result['productName'] ;?></td>
 							<td><?php echo $result['quantity'] ;?></td>
 							<td><?php echo $result['price'] ;?></td>
-							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ;?>">View Customer</a></td>
+							<td><a href="customer.php?customerid=<?php echo $result['customer_id'] ;?>">Hiển thị thông tin</a></td>
 							<td><?php
 									if($result['status_order'] == 0)
 									{ ?>
-										 <a href="?proccessid=<?php echo $result['customer_id'];?>&price=<?php echo $result['price']?>">No Process</a> 
+										 <a href="?proccessid=<?php echo $result['customer_id'];?>&price=<?php echo $result['price']?>">Chưa xử lý</a> 
 									<?php }
 									else{ ?>
-										<a href="?proccessedid=<?php echo $result['customer_id'];?>&price=<?php echo $result['price']?>">Processed</a> 	
+										<a href="?proccessedid=<?php echo $result['customer_id'];?>&price=<?php echo $result['price']?>">Đã xử lý</a> 	
 									<?php }
 							?></td>
 						</tr>
