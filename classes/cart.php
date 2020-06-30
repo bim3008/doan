@@ -23,7 +23,7 @@
             $result_cart = $this->db->select($infoCart);
             if($result_cart)  
             {   
-                $msg = 'Product Already Added';
+                $msg = '<span style="color:red">Sản phẩm đã được thêm</span>';
                 return $msg;
             }
             else

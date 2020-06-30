@@ -8,6 +8,8 @@
 			if(isset($_POST['login']))
 			{
 				$loginAccount = $login_customer->login_customer($_POST) ;
+
+				if($loginAccount == true){ echo $loginAccount ;}
 			}			
 ?>
 <?php

@@ -1,7 +1,8 @@
 <?php
 		require_once 'inc/header.php';
 	//	require_once 'inc/silder.php';
-		$customer_id = Session::get('customer_id') ;
+		$customer_id 		= Session::get('customer_id') ;
+	     	// $customer_facebook  = $userData['id'] ;
 ?>
 
  <div class="main">
@@ -21,20 +22,17 @@
 		   $quantity  = $_POST['quantity'];	 
 		   $AddToCart = $cart->add_to_cart($id,$quantity);
 		}
-		// SO Sánh
-	
-		// if(isset($_POST['productid']) )
-		// {	  
-		// 	$productid      = $_POST['productid'] ;
-		// 	$insert_compare = $pr->insert_compare($productid,$customer_id) ;
-		// }
 	?>
 <?php
 			if(isset($_POST['submitComment']))
 			{
-				$id = $_GET['proid'];
-				$messge            =  $_POST['messge'];
-				$insert_comment	   =  $customer -> insertComment($customer_id,$_POST,$id) ;				
+				if(isset($customer_id))
+				{
+					$id = $_GET['proid'];
+					$messge            =  $_POST['messge'];
+					$insert_comment	   =  $customer -> insertComment($customer_id,$_POST,$id) ;		
+				}
+						
 			}
 ?>
 	
@@ -47,7 +45,6 @@
 						{
 							while($result_details = $product_details->fetch_assoc())
 							{		
-
 					?>
 					<div class="cont-desc span_1_of_2">				
 						<div class="grid images_3_of_2">
@@ -70,7 +67,7 @@
 							<?php
 									if(isset($AddToCart))
 									{
-										echo 'Product Already Added';
+										echo '<span style="color:red">Sản phẩm đã được thêm</span>';
 									}
 							?>			
 					</div>			
@@ -116,11 +113,11 @@
 			?>
 			<?php
 				
-				if($customer_id)
+				if($customer_id || $customer_facebook)
 				{ ?>
 						<form action="" method="POST">
 							<textarea style="margin:20px 0px 0px;" name="messge" id="" cols="98" rows="8" placeholder="Viêt bình luận"></textarea>
-							<input style="margin-top:5px ; width:60px ; height:30px ; margin-left: 91.5%;" type="submit" name="submitComment" value="Gửi">
+							<input style="margin-top:5px ; width:70px ; height:30px ; margin-left: 89.5%;" type="submit" name="submitComment" value="Bình luận">
 						</form>
 				<?php }
 

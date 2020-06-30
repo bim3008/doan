@@ -90,7 +90,7 @@
 
 						<table style="float:right;text-align:left;" width="40%">
 							<tr>
-								<th>Grand Total :</th>
+								<th>Tổng cộng:</th>
 									<td>
 										<?php
 												if(isset($subtotal)){

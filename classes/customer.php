@@ -26,13 +26,13 @@
             if($username == " " || $password == " " || $repassword == " " || $email == "" || 
                $fullname == " " || $address == " "  ||   $phone == " " ){
 
-                echo "Please complete all information" ;
+                echo  '<h3 style= "text-align: center"> Vui lòng điền đầy đủ thông tin </h3>' ;
             }
             else
             {              
                 if($password!= $repassword)
                 {
-                    echo "Your Password  Not The Same" ;
+                    echo '<h3 style= "text-align: center"> Mật khẩu không khớp </h3>' ;
                 }
                 else
                 {
@@ -43,11 +43,11 @@
                     $result_username = $this->db->select($query_username);
                     
                     if($result_username){
-                        echo "Tài khoản của bạn đã tồn tại";
+                        echo '<h3 style= "text-align: center"> Tài khoản của bạn đã tồn tại </h3>' ;
                     }
                     else if($result_email)
                     {
-                        echo "Email của bạn đã tồn tại ";
+                        echo '<h3 style= "text-align:center"> Email của bạn đã tồn tại </h3>' ;
                     }
                     else
                     {
@@ -56,11 +56,11 @@
                         $result_insert = $this->db->insert($query_insert) ;
                         if($result_insert)
                         {
-                            echo  "ĐĂNG KÝ THÀNH CÔNG !!" ;
+                            echo '<h3 style= "text-align: center"> ĐĂNG KÝ THÀNH CÔNG </h3>' ;
                         }
                         else
                         {
-                            echo  "ĐĂNG KÝ THẤT BẠI !!" ;
+                            echo '<h3 style= "text-align: center"> ĐĂNG KÝ THẤT BẠI </h3>' ;
                         }
                     }
                 }
@@ -73,7 +73,7 @@
             $password   = mysqli_real_escape_string($this->db->link,$data['passwordLogin']);
             if($username == " " || $password == ""  )
             {
-                echo "Username or Password not empty" ;
+                echo '<p style="text-align:center ;color:red">Username or Password not empty' ;
             }
             else
             {
@@ -103,8 +103,8 @@
         
         public function update_profile($data,$id)
         {
-           echo $name        = mysqli_real_escape_string($this->db->link,$data['name']);
-           echo  $email       = mysqli_real_escape_string($this->db->link,$data['email']);
+            $name        = mysqli_real_escape_string($this->db->link,$data['name']);
+            $email       = mysqli_real_escape_string($this->db->link,$data['email']);
             $address     = mysqli_real_escape_string($this->db->link,$data['address']);
             $phone       = mysqli_real_escape_string($this->db->link,$data['phone']);
             if($name   == "" || $address == "" || $phone == "" || $email == "")
@@ -142,18 +142,22 @@
             $id = mysqli_real_escape_string($this->db->link,$id) ;
 
 
-            $query  = "INSERT INTO  tbl_comment(customer_id,comment,productId)  VALUES ('$customer_id','$messge','$id') " ;
+            $query  = "INSERT INTO  tbl_comment(customer_id,comment,productId)  VALUES ('$customer_id','$messge','$id') " ; 
             $result = $this->db->insert($query) ; 
         }
 
         public function insertFacebook($userData,$phone)
         {
+            
+           
            $phone    = mysqli_real_escape_string($this->db->link,$phone) ;  
            $API      = mysqli_real_escape_string($this->db->link,$userData['id']) ;
            $name     = mysqli_real_escape_string($this->db->link,$userData['name']);
            $email    = mysqli_real_escape_string($this->db->link,$userData['email']);
            $address  = mysqli_real_escape_string($this->db->link,$userData['location']['name']);
-             $query  = "INSERT INTO tbl_customer(`id`,`fullname`,`email`,`address_cs`,`phone`) VALUES ('$API','$name','$email','$address','$phone')
+
+                                                    
+           $query  = "INSERT INTO tbl_customer(`id`,`fullname`,`email`,`address_cs`,`phone`) VALUES ('$API','$name','$email','$address','$phone')
                       " ;
            $result =$this->db->insert($query);     
         }

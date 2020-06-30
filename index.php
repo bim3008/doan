@@ -1,6 +1,8 @@
 <?php
 		require_once 'inc/header.php';
 		require_once 'inc/silder.php' ;
+
+		error_reporting(0);
 ?>
 <?php 
 ?>
