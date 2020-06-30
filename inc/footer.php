@@ -3,42 +3,34 @@
    	  <div class="wrapper">	
 	     <div class="section group">
 				<div class="col_1_of_4 span_1_of_4">
-						<h4>Information</h4>
 						<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Customer Service</a></li>
-						<li><a href="#"><span>Advanced Search</span></a></li>
-						<li><a href="#">Orders and Returns</a></li>
-						<li><a href="#"><span>Contact Us</span></a></li>
+						<li><a href="#">Tìm hiều trả góp</a></li>
+						<li><a href="#">Chính sách bảo hành</a></li>
+						<li><a href="#">Chính sách đổi trả</a></li>
+						<li><a href="#">Giao hàng và thành toán</a></li>
 						</ul>
 					</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Why buy from us</h4>
 						<ul>
-						<li><a href="about.php">About Us</a></li>
-						<li><a href="faq.php">Customer Service</a></li>
-						<li><a href="#">Privacy Policy</a></li>
-						<li><a href="contact.php"><span>Site Map</span></a></li>
-						<li><a href="preview.php"><span>Search Terms</span></a></li>
+						<li><a href="about.php">Giới thiệu công ty</a></li>
+						<li><a href="faq.php">Tuyển dụng</a></li>
+						<li><a href="#">Gửi ý kiến, khiếu nại</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>My account</h4>
 						<ul>
-							<li><a href="contact.php">Sign In</a></li>
-							<li><a href="index.php">View Cart</a></li>
-							<li><a href="#">My Wishlist</a></li>
-							<li><a href="#">Track My Order</a></li>
-							<li><a href="faq.php">Help</a></li>
+							<li><a href="contact.php">Gọi mua hàng 18001009	</a></li>
+							<li><a href="index.php">  Gọi khiêu nại 18001900</a></li>
+							<li><a href="#">Gọi tư vấn 10080099</a></li>
 						</ul>
 				</div>
 				<div class="col_1_of_4 span_1_of_4">
-					<h4>Contact</h4>
+		
 						<ul>
-							<li><span>+84-0364764002</span></li>
+							<li><span style="width:300px;font-size:12px">Địa chỉ:26 Thanh Đa phường 27 quận Bình Thạnh TP.Hồ Chí Minh</span></li>
 						</ul>
 						<div class="social-icons">
-							<h4>Follow Us</h4>
+							<h4>Follow</h4>
 					   		  <ul>
 							      <li class="facebook"><a href="https://www.facebook.com/bimmm3008" target="_blank"> </a></li>
 							      <li class="twitter"><a href="#" target="_blank"> </a></li>
@@ -50,7 +42,7 @@
 				</div>
 			</div>
 			<div class="copy_right">
-				<p>Training with live project &amp; All rights Reseverd </p>
+				<p>Project by Trương Định</p>
 		   </div>
      </div>
     </div>

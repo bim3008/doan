@@ -1,14 +1,14 @@
 <?php
 		require_once 'inc/header.php';
-		require_once 'inc/silder.php';
+		require_once 'inc/silder.php' ;
 ?>
 <?php 
 ?>
  <div class="main">
     <div class="content">
-    	<div class="content_top" style="margin-top: 30px;background-color: red;">
+    	<div class="content_top" style="margin-top: 30px;background-color: #414045;">
     		<div class="heading">
-    		<h3>Sản phẩm nổi bật</h3>
+    		<h3 style="color:blanchedalmond">Sản phẩm nổi bật</h3>
     		</div>
     		<div class="clear"></div>
     	</div>
@@ -35,9 +35,9 @@
 				?>
 			<!-- END SẢN PHẨM NỔI BẬT -->
 			</div>
-			<div style="background-color: red;"  class="content_bottom">
+			<div style="background-color: 414045;"  class="content_bottom">
     				<div class="heading">
-    					<h3>Sản phẩm mới</h3>
+    					<h3 style="color:blanchedalmond">Sản phẩm mới</h3>
     				</div>
     				<div class="clear"></div>
 			</div>
@@ -64,3 +64,4 @@
     </div>
  </div>	  
  <?php require_once 'inc/footer.php' ;?>
+

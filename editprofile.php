@@ -11,12 +11,7 @@
 ?>    
  <div class="main">		
 		<div class="content">
-            <div class="content_top">
-                <div class="heading">
-                <h3>Update Profile</h3>
-                </div>
-                <div class="clear"></div>
-            </div>
+          
             <?php
                 if(isset($_POST['updateprofile']))
                 {
@@ -67,7 +62,7 @@
                             </tr>
 
                             <tr>
-                                    <td colspan="4"><input type="submit" name="updateprofile" value="Update" style="height: 30px;font-size: 20px;"></td>
+                                    <td colspan="4"><input type="submit" name="updateprofile" value="Cập nhập" style="height: 30px;font-size: 20px;"></td>
                                     
                             </tr>
 

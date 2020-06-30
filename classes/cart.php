@@ -115,10 +115,10 @@
             $query = " SELECT *  FROM tbl_cart WHERE sessionId = '$sId' ";
             $get_order = $this->db->select($query);
             if($get_order)
-            {
-                // Thêm vào bảng order
+            { 
+                    // Thêm vào bảng order
                 while($result= $get_order->fetch_assoc())
-                {
+                {       
                         $productId   = $result['productId'];
                         $productName = $result['productName'];
                         $quantity    = $result['quantity'];
@@ -128,6 +128,33 @@
                         $query_order = " INSERT INTO tbl_oder(productId,productName,price,quantity,image_order,customer_id) 
                         VALUES ('$productId','$productName',' $price','$quantity','$image', ' $customerid')" ;
                         $insert_order = $this->db->insert($query_order) ;
+
+                        return $insert_order ;
+                }
+            }
+        }
+        public function insert_order_FB($facebookId)
+        {
+            $facebookId = mysqli_real_escape_string($this->db->link,$facebookId);
+            $sId = session_id();
+            $query = " SELECT *  FROM tbl_cart WHERE sessionId = '$sId' ";
+            $get_order = $this->db->select($query);
+            if($get_order)
+            { 
+                    // Thêm vào bảng order
+                while($result= $get_order->fetch_assoc())
+                {
+                        $productId   = $result['productId'];
+                        $productName = $result['productName'];
+                        $quantity    = $result['quantity'];
+                        $price       = $result['price'] * $quantity;
+                        $image       = $result['image_cart'];
+                        $customerid  = $facebookId ;
+                        $query_order = " INSERT INTO tbl_oder(productId,productName,price,quantity,image_order,customer_id) 
+                        VALUES ('$productId','$productName',' $price','$quantity','$image', ' $customerid')" ;
+                        $insert_order = $this->db->insert($query_order) ;
+
+                        return $insert_order ;
                 }
             }
         }

@@ -146,13 +146,14 @@
             $result = $this->db->insert($query) ; 
         }
 
-        public function insertFacebook($userData)
+        public function insertFacebook($userData,$phone)
         {
-           $API= mysqli_real_escape_string($this->db->link,$userData['id']) ;
+           $phone    = mysqli_real_escape_string($this->db->link,$phone) ;  
+           $API      = mysqli_real_escape_string($this->db->link,$userData['id']) ;
            $name     = mysqli_real_escape_string($this->db->link,$userData['name']);
            $email    = mysqli_real_escape_string($this->db->link,$userData['email']);
            $address  = mysqli_real_escape_string($this->db->link,$userData['location']['name']);
-           $query  = "INSERT INTO tbl_fb(`api`,`fullname`,`email`,`address`) VALUES ('$API','$name','$email','$address')
+             $query  = "INSERT INTO tbl_customer(`id`,`fullname`,`email`,`address_cs`,`phone`) VALUES ('$API','$name','$email','$address','$phone')
                       " ;
            $result =$this->db->insert($query);     
         }
@@ -168,7 +169,7 @@
         //     $result =$this->db->insert($query);
         //     if($result)
         //     {
-        //         header('location:payment.php');
+        //         header('location:success.php');
         //     }    
 
         // }

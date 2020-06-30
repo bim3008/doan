@@ -4,9 +4,9 @@
 ?>
  <div class="main">		
 	<div class="content">
-            <div class="content_top">
+        <div class="content_top" style=" margin-bottom:5px">
                 <div class="heading">
-                <h3>ProFile Customer</h3>
+                <h3>Hồ Sơ</h3>
                 </div>
                 <div class="clear"></div>
             </div>  
@@ -40,7 +40,7 @@
                                 <td><?php echo  $result["phone"] ;?></td>
                         </tr>
                         <tr>
-                                <td colspan="4"> <a href="editprofile.php">UPDATE PROFILE</a> </td>
+                                <td colspan="4"> <a href="editprofile.php">CẬP NHẬP</a> </td>
                                 
                         </tr>
 

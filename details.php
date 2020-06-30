@@ -57,9 +57,9 @@
 						<h2><?php echo $result_details['productName'] ;?> </h2>
 						<p> <?php echo $fm->textShorten($result_details['description_product'],50) ;?></p>					
 						<div class="price">
-							<p>Price: <span><?php echo $fm->formatDollars($result_details['price']." "."VNĐ") ;?></span></p>
-							<p>Category: <span><?php echo $result_details['catName'] ;?></span></p>
-							<p>Brand:<span><?php echo $result_details['brandName']; ?></span></p>
+							<p>Giá: <span><?php echo $fm->formatDollars($result_details['price']." "."VNĐ") ;?></span></p>
+							<p>Thư Mục: <span><?php echo $result_details['catName'] ;?></span></p>
+							<p>Thương hiệu:<span><?php echo $result_details['brandName']; ?></span></p>
 					</div>
 					<div class="add-cart">
 						<form action="" method="post">

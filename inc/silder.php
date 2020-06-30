@@ -17,11 +17,9 @@
 									$showall_cat = $ct->showAllCategory_FontEnd() ;
 									if($showall_cat)
 									{
-										while($result_show=$showall_cat->fetch_assoc()){
-								
+										while($result_show=$showall_cat->fetch_assoc()){						
 							?>
 									<td class="listCatogory"> <a href="productbycat.php?catid=<?php  echo $result_show['catId'] ;?>"><?php echo '<p style ="font-size: 30px;margin: 20px 0px 0px 10px;"> '.$result_show["catName"].'</p>' ;?></a>
-
 									</td>
 							<?php
 									}

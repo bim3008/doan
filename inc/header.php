@@ -3,7 +3,6 @@
 	// require_once './fb-callback.php' ;
 	Session::init();
 ?>			
-<?php  error_reporting(0); ?>
 <?php
   header("Cache-Control: no-cache, must-revalidate");
   header("Pragma: no-cache"); 
@@ -51,14 +50,15 @@
 </head>
 <body>
 <?php
+
 	$accessToken     = Session::get('accesstoken'); 
-	$getInformationLoginFacebook = new customer() ;
-	if(isset($accessToken))
-	{
-		$accessToken     = Session::get('accesstoken'); 
-		$userData        = Session::get('userData'); 
-		$inserInformationLoginFacebook = $getInformationLoginFacebook->insertFacebook($userData);		
-	}
+	// $getInformationLoginFacebook = new customer() ;
+	// if(isset($accessToken))
+	// {
+	// 	$accessToken     = Session::get('accesstoken'); 
+	// 	$userData        = Session::get('userData'); 
+	// 	// $inserInformationLoginFacebook = $getInformationLoginFacebook->insertFacebook($userData);		
+	// }
 ?>
   <div class="wrap">
 		<div style="background-color: black;" class="header_top">
@@ -72,7 +72,7 @@
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
-					<div style="width: 165px;"  class="cart">
+					<div style="width:175px;"  class="cart">
 						<a href="cart.php" title="View my shopping cart" rel="nofollow">
 								<span class="cart_title">Giỏ hàng</span>
 								<span class="no_product">
@@ -101,7 +101,7 @@
 					header('location:index.php');
 				}
 			?>
-		   <div  style="    width: 100px; margin-left: 50px;line-height: 2;"  class="login">
+		   <div  style="    width: 115px; margin-left: 30px;line-height: 2;"  class="login">
 			   <!-- Kiểm tra đăng nhập -->
 					<?php
 					$check_login     = Session::get('customer_login');
@@ -116,7 +116,7 @@
 					<?php } 
 					else { ?>
 	
-						<a style="font-size: 20px;" href="login.php">Đăng nhập</a>
+						<a style="font-size:20px;" href="login.php">Đăng nhập</a>
 				<?php } ?>						
 			</div>
 		 <div class="clear"></div>

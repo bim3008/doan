@@ -129,7 +129,7 @@
         }
         public function get_product_iphone($id)
         {
-            $query  = "SELECT * FROM tbl_product WHERE catId = '$id' AND brandId = '4' ORDER BY productId DESC LIMIT 6 " ;
+            $query  = "SELECT * FROM tbl_product WHERE catId = '$id' AND brandId = '4' ORDER BY productId DESC LIMIT 8 " ;
             $result = $this->db->select($query);
             return $result ;
         }

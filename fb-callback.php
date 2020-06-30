@@ -30,18 +30,8 @@ require_once 'config.php' ;
     $response = $FB->get("me?fields=id,name,email,location",$accessToken->getValue()) ;
 
     $userData = $response->getGraphNode()->asArray() ;
-    // $_SESSION['userData']    = $userData ; 
-    // $_SESSION['accesstoken'] = $accessToken;
-    // foreach($userData as $key => $value){
-    //     foreach($value as $key1 =>$value1){
-    //         echo "<pre>" ;
-    //         print_r($value1);
-    //         echo "</pre>" ;
-    //     }
-        
-    // }
-
     session::set('userData',$userData);
+    session::set('customer_id',$userData['id']) ;
     session::set('accesstoken',$accessToken);
     header('location:index.php');
     exit();

@@ -13,11 +13,9 @@
 		<div class="content">
             <div class="content_top">
                 <?php
-
-                    $success ='<p>Order Successfully !! Thank you </p>'  ;
+                    $success ='<p> Mua thành công !!! Cảm ơn quý khách </p>'  ;
                     echo $success ;
                     Session::set('success',$success) ;
-
                 ?>
               
             </div>    

@@ -23,8 +23,8 @@
 								$delete_order = $cart->delete_process($id,$price);
 							}
 					?>
-					<thead						
-						<tr>
+					<thead	>
+						<tr class="odd gradeX">					
 							<th>No.</th>
 							<th>Khách hàng ID</th>
 							<th>Ngày đặt hàng</th>
@@ -35,8 +35,7 @@
 							<th>Trạng thái</th>
 						</tr>
 						
-					</thead>
-					<tbody>
+					
 					<?php
 							$cart =  new cart();
 							$fm   =  new Format;
@@ -48,8 +47,9 @@
 								{
 									$i++;						
 					?>
-
-						<tr class="odd gradeX">
+					</thead>
+					<tbody style=" margin-left:10px">
+						<tr style="margin-left:10px">
 							<td><?php echo $i ;?></td>
 							<td><?php echo $result['customer_id'] ;?></td>
 							<td><?php echo $fm->formatDate($result['date']) ;?></td>

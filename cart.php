@@ -6,6 +6,12 @@
     <div class="content">
     	<div class="cartoption">		
 			<div class="cartpage">
+			<div class="content_top" style=" margin-bottom:5px">
+                <div class="heading">
+                <h3> Giỏ Hàng</h3>
+                </div>
+                <div class="clear"></div>
+            </div>  
 				<?php
 					//Delete Cart
 					if(isset($_GET['cartid']))
@@ -24,17 +30,15 @@
 							$delete = $cart->deleteCart($cartId);
 						}
 					}						
-				?>
-					<h2>Your Cart</h2>
-		
+				?>		
 						<table class="tblone">
 							<tr>
-								<th width="20%">Product Name</th>
-								<th width="10%">Image</th>
-								<th width="15%">Price</th>
-								<th width="25%">Quantity</th>
-								<th width="20%">Total Price</th>
-								<th width="10%">Action</th>
+								<th width="20%">Tên sản phẩm</th>
+								<th width="10%">Hình ảnh</th>
+								<th width="15%">Giá</th>
+								<th width="25%">Số Lương</th>
+								<th width="20%"> Tổng cộng</th>
+								<th width="10%">Xóa</th>
 							</tr>
 							<?php
 								if(isset($delete_cart))
