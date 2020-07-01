@@ -17,7 +17,7 @@
  	<div class="main">
     <div class="content">
     	<div class="content_top">
-            <h2>Products</h2>
+            <h2>KẾT QUẢ TÌM KIẾM:</h2>
 				<div class="clear"></div>
 		</div>
             <!-- Hiển thị sản phẩm --> 

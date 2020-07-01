@@ -51,8 +51,8 @@
             </div>
             <div class="payment">
                 <h2>Choose Method Payment</h2>
-               <div  class="online"> <a href="payonline.php">Payment Online</a></div> 
-               <div  class="off"> <a href="payoffline.php">Payment Offline</a></div> 
+               <div  class="online"> <a href="payonline.php">Thanh toán Online</a></div> 
+               <div  class="off"> <a href="payoffline.php">Thanh toán Offline</a></div> 
                <!-- <div class="pre"><a href="cart.php">Previous</a></div>           -->
             </div>
             

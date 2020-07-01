@@ -2,7 +2,8 @@
 		require_once 'inc/header.php';
 	//	require_once 'inc/silder.php';
 		$customer_id 		= Session::get('customer_id') ;
-	     	// $customer_facebook  = $userData['id'] ;
+			 // $customer_facebook  = $userData['id'] ;
+			 error_reporting(0);
 ?>
 
  <div class="main">

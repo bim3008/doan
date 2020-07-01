@@ -34,6 +34,10 @@
                 {
                     echo '<h3 style= "text-align: center"> Mật khẩu không khớp </h3>' ;
                 }
+                else if( strlen($password)  < 6  || strlen($repassword)  < 6)
+                {
+                    echo '<h3 style= "text-align: center"> Mật khẩu lớn hơn 6 ký tự </h3>' ;
+                }
                 else
                 {
                     $query        = "SELECT * FROM tbl_customer WHERE email = '$email' " ;
@@ -71,7 +75,7 @@
         {
             $username   = mysqli_real_escape_string($this->db->link,$data['usernameLogin']);
             $password   = mysqli_real_escape_string($this->db->link,$data['passwordLogin']);
-            if($username == " " || $password == ""  )
+            if($username == " " || $password == " "  )
             {
                 echo '<p style="text-align:center ;color:red">Username or Password not empty' ;
             }

@@ -32,9 +32,9 @@ if ($_GET['catid'] == '3') {
 						<div class="grid_1_of_4 images_1_of_4 ">
 							<a href="details.php?proid=<?php echo $result_iphone['productId']; ?>"><img class="image_product" style="height:200px;" src="admin/uploads/<?php echo $result_iphone['image_product']; ?>" alt="" /></a>
 							<h2><?php echo $result_iphone['productName']; ?> </h2>
-							<p><?php echo $fm->textShorten($result_samsung['description_product'], 40); ?></p>
+							<p><?php echo $fm->textShorten($result_iphone['description_product'], 10); ?></p>
 							<p><span class="price"><?php echo $fm->formatDollars($result_iphone['price']); ?></span></p>
-							<div class="button"><span> <a href="details.php?proid=<?php echo $result_samsung['productId']; ?>" class="details">Chi tiết</a></span></div>
+							<div class="button"><span> <a href="details.php?proid=<?php echo $result_iphone['productId']; ?>" class="details">Chi tiết</a></span></div>
 						</div>
 				<?php
 					}

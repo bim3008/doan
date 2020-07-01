@@ -16,7 +16,10 @@ require_once 'inc/header.php';
             }else{
 
                 $phone = $_POST['phoneFacebook'] ;
-                $insertCustomerFb = $customer->insertFacebook($userData, $phone);
+                if($facebookId == '') 
+                {   
+                    $insertCustomerFb = $customer->insertFacebook($userData, $phone);
+                }     
                 $insertOrder = $cart->insert_order_FB($facebookId);
                 $deteleCart = $cart->delete_all_in_cart();
                 header('location:success.php');
@@ -49,15 +52,16 @@ require_once 'inc/header.php';
     }
 
     .ordersubmit {
-        padding: 5px;
+        padding: 7px;
         background: red;
         font-size: 20px;
         color: fff;
         border: none;
-        width: 100px;
+        width: 111px;
         margin-left: 73%;
         border-radius: 10%;
         cursor: pointer;
+        margin-bottom: 10px;
     }
 
     .ordersubmit:hover {
@@ -76,7 +80,7 @@ require_once 'inc/header.php';
         <div class="section group">
             <div class="content_top">
                 <div class="heading">
-                    <h3>Payment Offline</h3>
+                    <h3>Thanh toán Offline</h3>
                 </div>
             </div>
         </div>
@@ -86,12 +90,12 @@ require_once 'inc/header.php';
     <div class="box_left">
         <table class="tblone">
             <tr>
-                <th width="5%">ID</th>
-                <th width="25%">Product Name</th>
-                <th width="10%">Image</th>
-                <th width="25%">Price</th>
-                <th width="5%">Quantity</th>
-                <th width="30%">Total Price</th>
+                <th width="5%">No</th>
+                <th width="25%">Sản phẩm</th>
+                <th width="10%">Hình</th>
+                <th width="25%">Giá</th>
+                <th width="5%">Số lươngk</th>
+                <th width="30%">Tổng cộng</th>
             </tr>
             <?php
             //Hiển thị sản phẩm
@@ -201,7 +205,7 @@ require_once 'inc/header.php';
 </div>
 </div>
 </div>
-     <input type="submit" name="ordersubmit" class="ordersubmit" , value="ORDER">
+     <input type="submit" name="ordersubmit" class="ordersubmit" , value="Thanh toán">
             </form> 
 
 <!-- <a href="?orderid=order" class="ordersubmit">ORDER</a> -->
